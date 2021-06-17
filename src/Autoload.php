@@ -4,8 +4,6 @@ namespace App;
 
 /**
  * Class Autoload
- *
- * Instanciate concrete class
  */
 class Autoload
 {
