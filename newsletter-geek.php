@@ -2,21 +2,23 @@
 
 /**
  * Plugin Name:       Newsletter api geek
- * Plugin URI:        https://example.com/plugins/the-basics/
- * Description:       Register users on api.
- * Version:           1.10.3
- * Requires at least: 5.2
- * Requires PHP:      7.2
- * Author:            John Smith
- * Author URI:        https://author.example.com/
- * License:           GPL v2 or later
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Plugin URI:        https://github.com/guilfred/plugin-newsletter
+ * Description:       Register email subscribe on api.
+ * Version:           1.0
+ * Requires PHP:      7.4
+ * Author:            Guillaume - Alfred
  * Text Domain:       my-basics-plugin
- * Domain Path:       /languages
  */
 
-require_once 'includes'.DIRECTORY_SEPARATOR.'App.php';
-use App\App;
+require_once 'src'.DIRECTORY_SEPARATOR.'App.php';
+require_once 'src'.DIRECTORY_SEPARATOR.'Autoload.php';
 
-$app = App::getInstance();
+use App\App;
+use App\Autoload;
+use App\ConfigPlg;
+
+// Autoload
+Autoload::load();
+
+$app = App::getInstance(ConfigPlg::getInstance());
 
